@@ -1,0 +1,233 @@
+@import "tailwindcss";
+/* Light diagonal stripe pattern */
+.b10 {
+  background-color: #f8fafc; /* base background */
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.04) 0px,
+    rgba(15, 23, 42, 0.04) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+/* Slightly darker / denser variant */
+.b11 {
+  background-color: #f8fafc;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.06) 0px,
+    rgba(15, 23, 42, 0.06) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+}
+
+.b10,.b11{
+    width: 100%;
+    
+    height: 100%;
+
+}
+.bmid{
+   border-width: 2px;
+    border-color: var(--color-gray-300);
+}
+.frame{
+    display: grid;
+    grid-template-columns: 2fr 65fr 2fr;
+}
+
+svg{
+    width:13%;
+    height:16%;
+    border: 5px solid rgb(239, 236, 236);
+    
+    padding: 12px;
+    margin: 8px;
+    transition: 0.2s ease-in-out;
+}
+svg:hover{
+   width:13%;
+    height:16%;
+    border: 5px solid rgb(239, 236, 236);
+    padding: 12px;
+    margin: 8px;
+    transform: rotate(10deg);
+}
+svg:nth-child(even):hover{
+   width:13%;
+    height:16%;
+    border: 5px solid rgb(239, 236, 236);
+    padding: 12px;
+    margin: 8px;
+    transform: rotate(-10deg);
+}
+
+.b8 h1{
+    text-align: center;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0%;
+    margin: 0px;
+}
+
+.card-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: radial-gradient(
+    300px circle at bottom right,
+    rgba(59, 130, 246, 0.18),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.group:hover .card-glow::after {
+  opacity: 1;
+}
+
+/* ---------- RESPONSIVE SAFETY NET ---------- */
+
+/* Prevent horizontal overflow everywhere */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Fix your custom margins on small screens */
+@media (max-width: 768px) {
+  .mr-30,
+  .ml-30 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+.frame {
+  display: grid;
+  grid-template-columns: 2fr 65fr 2fr;
+}
+
+/* MOBILE: collapse stripes */
+@media (max-width: 768px) {
+  .frame {
+    grid-template-columns: 1fr;
+  }
+
+  .b10,
+  .b11 {
+    display: none;
+  }
+
+  .bmid {
+    border-left: none;
+    border-right: none;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 768px) {
+  .grid {
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  svg {
+    transform: none !important;
+  }
+}
+@media (max-width: 768px) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+iframe {
+  max-width: 100%;
+}
+.container-safe {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .mr-30, .ml-30 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .frame {
+    grid-template-columns: 1fr;
+  }
+
+  .b10, .b11 {
+    display: none;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+html, body {
+  overflow-x: auto;
+}
+@media (hover: none) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+@media (max-width: 480px) {
+  .app-root {
+    transform: scale(0.75);
+    transform-origin: top center;
+    width: 133%;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-root {
+    transform: scale(0.7);
+    transform-origin: top center;
+    width: 143%;
+  }
+}
+/* =========================
+   SMALL SCREEN SCALE-DOWN
+   ========================= */
+
+@media (max-width: 480px) {
+  .app-root {
+    transform: scale(0.75);
+    transform-origin: top center;
+    width: 133%;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-root {
+    transform: scale(0.7);
+    transform-origin: top center;
+    width: 143%;
+  }
+}
