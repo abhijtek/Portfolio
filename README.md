@@ -23,32 +23,32 @@ Backend
 AI
 - OpenRouter API
 Project Architecture
-The project is divided into a frontend and a backend. The frontend is a React application responsible for UI, animations, and routing. The backend is an Express server connected to MongoDB, responsible for serving project data and handling AI chatbot requests.
-Backend Structure
-server/
- ├─ models/
- │  └─ Project.js
- ├─ routes/
- │  ├─ projects.js
- │  └─ chat.js
- ├─ controllers/
- │  ├─ projectController.js
- │  └─ chatController.js
- ├─ config/
- │  └─ db.js
- └─ server.js
-API Endpoints
-GET /api/projects
-- Fetches all projects stored in MongoDB and returns them as JSON.
-POST /api/chat
-- Sends user messages to OpenRouter and returns the AI response.
-Environment Variables
-The backend requires the following environment variables:
-- PORT
-- MONGODB_URI
-- OPENROUTER_API_KEY
-The frontend does not require any environment variables. All configuration is handled directly in the application code.
-Running the Project Locally
+The project is divided into a frontend and a backend. The frontend is a React application responsible for UI, animations, and routing. The backend is an Express server connected to MongoDB, responsible for serving project data and handling AI chatbot requests.<br>
+Backend Structure<br>
+server/<br>
+ ├─ models/<br>
+ │  └─ Project.js<br>
+ ├─ routes/<br>
+ │  ├─ projects.js<br>
+ │  └─ chat.js<br>
+ ├─ controllers/<br>
+ │  ├─ projectController.js<br>
+ │  └─ chatController.js<br>
+ ├─ config/<br>
+ │  └─ db.js<br>
+ └─ server.js<br>
+API Endpoints<br>
+GET /api/projects<br>
+- Fetches all projects stored in MongoDB and returns them as JSON.<br>
+POST /api/chat<br>
+- Sends user messages to OpenRouter and returns the AI response.<br>
+Environment Variables<br>
+The backend requires the following environment variables:<br>
+- PORT<br>
+- MONGODB_URI<br>
+- OPENROUTER_API_KEY<br>
+The frontend does not require any environment variables. All configuration is handled directly in the application code.<br>
+Running the Project Locally<br>
 1. Clone the repository
 2. Navigate to the backend folder and install dependencies using npm install
 3. Create a .env file in the backend folder and add the required environment variables
