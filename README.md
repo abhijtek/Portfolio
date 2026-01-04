@@ -57,10 +57,11 @@ Running the Project Locally
 6. Start the frontend development server using npm run dev
 Design Philosophy
 This portfolio is intentionally desktop-first and layout-driven. Instead of collapsing content into a simplified mobile layout, the entire UI scales uniformly on small screens so that users can still access all features and visual elements.
-Author
+
+Author<br>
 Abhijeet Singh Rajput
-Full-stack Developer | Competitive Programmer
-Codeforces: https://codeforces.com/profile/singhabhijeet1212
-LeetCode: https://leetcode.com/u/Jpr9utstOH/
-License
+Full-stack Developer | Competitive Programmer<br>
+Codeforces: https://codeforces.com/profile/singhabhijeet1212<br>
+LeetCode: https://leetcode.com/u/Jpr9utstOH/<br>
+License<br>
 This project is built for personal portfolio use. The code is shared for learning and reference purposes only.
