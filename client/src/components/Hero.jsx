@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="bmid">
       <div className="cell b1 flex items-center justify-center p-8 border-b border-gray-300">
         
-        <img className = "w-30 h-30  rounded-full border-4 border-gray-200" src={"static/images/S2.png"} alt="Abhijeet" />
+        <img className = "w-30 h-30  rounded-full border-4 border-gray-200" src={"static/S2.png"} alt="Abhijeet" />
         
          </div>
       <div className="cell b2 text-6xl
