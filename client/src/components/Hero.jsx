@@ -2,6 +2,9 @@ import  AboutMeCard  from "./AboutMeCard";
 import BookCallCard from "./BookCallCard";
 import ToolBoxCard from "./ToolBoxCard"
 import HeroIcons from "./HeroIcons";
+import heroImage from "../assets/S2";
+
+
 
 export default function Hero() {
   return (
@@ -32,7 +35,7 @@ export default function Hero() {
       <div className="bmid">
       <div className="cell b1 flex items-center justify-center p-8 border-b border-gray-300">
         
-        <img className = "w-30 h-30  rounded-full border-4 border-gray-200" src="src/assets/S2.png" alt="" />
+        <img className = "w-30 h-30  rounded-full border-4 border-gray-200" src={heroImage} alt="Abhijeet" />
         
          </div>
       <div className="cell b2 text-6xl
