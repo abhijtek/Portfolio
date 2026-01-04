@@ -17,7 +17,7 @@ export default function Chatbot() {
 
     const newMessages = [
       ...messages,
-      { role: "user", content: input }
+      { role: "user", content: input },
     ];
 
     setMessages(newMessages);
@@ -26,12 +26,12 @@ export default function Chatbot() {
     try {
       const res = await API.post("/chat", {
         messages: newMessages,
-        mode: "Developer"
+        mode: "Developer",
       });
 
       setMessages([
         ...newMessages,
-        { role: "assistant", content: res.data.reply }
+        { role: "assistant", content: res.data.reply },
       ]);
     } catch (err) {
       console.error(err);
@@ -43,17 +43,17 @@ export default function Chatbot() {
       {/* Floating Button */}
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-40 rounded-full border border-[var(--border-primary)] bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-[var(--bg-secondary)]"
+        className="fixed bottom-6 right-6 z-40 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-gray-100"
       >
         Chat with AI
       </button>
 
       {/* Chat Window */}
       {open && (
-        <div className="fixed bottom-20 right-6 z-50 w-[360px] rounded-xl border border-[var(--border-primary)] bg-white shadow-xl">
+        <div className="fixed bottom-20 right-6 z-50 w-[360px] rounded-xl border border-gray-300 bg-white shadow-xl">
           
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-[var(--border-primary)] px-4 py-3">
+          <div className="flex items-center justify-between border-b border-gray-300 px-4 py-3">
             <span className="text-sm font-medium">
               Abhijeet’s AI Assistant
             </span>
@@ -68,7 +68,7 @@ export default function Chatbot() {
           {/* Messages */}
           <div className="h-72 overflow-y-auto px-4 py-3 space-y-4 text-sm">
             {messages.length === 0 && (
-              <p className="text-[var(--text-secondary)]">
+              <p className="text-gray-500">
                 Ask me about my projects, skills, or experience.
               </p>
             )}
@@ -78,8 +78,8 @@ export default function Chatbot() {
                 key={i}
                 className={`max-w-[85%] rounded-lg px-3 py-2 ${
                   m.role === "user"
-                    ? "ml-auto bg-[var(--accent)] text-white"
-                    : "mr-auto bg-[var(--bg-secondary)] text-[var(--text-primary)]"
+                    ? "ml-auto bg-blue-500 text-white"
+                    : "mr-auto bg-gray-100 text-gray-900"
                 }`}
               >
                 {m.content}
@@ -89,14 +89,18 @@ export default function Chatbot() {
           </div>
 
           {/* Input */}
-          <div className="border-t border-[var(--border-primary)] p-3">
+          <div className="border-t border-gray-300 p-3">
             <input
               type="text"
               placeholder="Type a message..."
-              className="w-full rounded-md border border-[var(--border-primary)] px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
               value={input}
-              onChange={e => setInput(e.target.value)}
-              onKeyDown={e => e.key === "Enter" && sendMessage()}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && input.trim()) {
+                  sendMessage();
+                }
+              }}
             />
           </div>
         </div>
