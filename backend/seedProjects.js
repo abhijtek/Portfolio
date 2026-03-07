@@ -16,6 +16,14 @@ const seedProjects = async () => {
 
     // Insert projects
     await Project.insertMany([
+            {
+        title: "Blog Post -  A full stack blogging application",
+        description:
+          "A full-stack publishing platform with a modern React frontend, Express API backend, role-based moderation, rich text editing, and image-backed articles.",
+        tech: ["React", "Node.js", "Express", "MongoDB"],
+        github: "https://github.com/abhijtek/BlogPost",
+        live: ""
+      },
       {
         title: "XTechon Flight Booking System",
         description:
