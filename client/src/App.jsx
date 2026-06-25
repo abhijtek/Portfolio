@@ -5,10 +5,10 @@ import "./index.css";
 const fallbackProjects = [
   {
     _id: "blogpost",
-    title: "BlogPost",
+    title: "BlogPost - Full-Stack Publishing Platform",
     description:
-      "A full-stack publishing platform with role-based moderation, rich text editing, and image-backed articles.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
+      "Production-ready publishing platform with draft, pending, published, and rejected workflows, admin moderation, JWT auth, TinyMCE, Appwrite media storage, and AI writing assistance.",
+    tech: ["React 19", "Node.js", "Express", "MongoDB", "JWT", "TinyMCE", "Appwrite"],
     github: "https://github.com/abhijtek/BlogPost",
     live: "",
   },
@@ -16,26 +16,17 @@ const fallbackProjects = [
     _id: "flight-booking",
     title: "XTechon Flight Booking",
     description:
-      "Flight booking platform with JWT authentication, dynamic pricing, wallet balance, PDF tickets, and email delivery.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
+      "Full-stack flight booking platform with search, booking, wallet balance, ticket history, JWT auth, dynamic pricing, PDF ticket generation, and email delivery.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "PDF"],
     github: "https://github.com/abhijtek/xtechon-flight-booking",
     live: "",
   },
   {
-    _id: "ecommerce",
-    title: "E-Commerce Web App",
-    description:
-      "Responsive e-commerce frontend with Redux Toolkit state management and reusable interface components.",
-    tech: ["React", "Redux Toolkit", "Tailwind CSS"],
-    github: "https://github.com/abhijtek/React-E-Commerce-UI",
-    live: "",
-  },
-  {
-    _id: "backend",
+    _id: "user-management",
     title: "User Management Backend",
     description:
-      "Secure backend system with JWT authentication, role-based access, and complete CRUD APIs.",
-    tech: ["Node.js", "Express", "MongoDB"],
+      "Secure backend system for user registration, login, role-based access, validation middleware, modular architecture, and complete CRUD APIs.",
+    tech: ["Node.js", "Express", "MongoDB", "JWT", "RBAC"],
     github: "https://github.com/abhijtek/project-camp-backend",
     live: "",
   },
@@ -72,64 +63,59 @@ const services = [
   },
 ];
 
-const experiences = [
+const buildAreas = [
   {
-    year: "2026",
-    date: "Current",
-    company: "TC Consulting",
-    role: "Portfolio & Full-Stack Developer",
+    eyebrow: "Frontend Systems",
+    title: "I build responsive React interfaces",
     body:
-      "Building full-stack portfolio features with React, Express, MongoDB, project APIs, and a polished single-page UI.",
+      "I use React, Redux Toolkit, React Router, HTML5, CSS3, Tailwind CSS, Bootstrap, and Vite to build clean UI flows that work across screen sizes.",
   },
   {
-    year: "2025",
-    date: "Project Work",
-    company: "Independent Development",
-    role: "React Developer",
+    eyebrow: "Backend APIs",
+    title: "I build secure Node.js services",
     body:
-      "Created responsive project interfaces, reusable components, API integrations, and modern layouts using Tailwind CSS.",
+      "I create Express.js REST APIs with JWT authentication, role-based access, validation middleware, and backend business logic.",
   },
   {
-    year: "2024",
-    date: "Backend Practice",
-    company: "Personal Projects",
-    role: "Node.js Developer",
+    eyebrow: "Database Work",
+    title: "I model data for real applications",
     body:
-      "Built authentication, project models, CRUD APIs, and backend services with Express and MongoDB.",
+      "I work with MongoDB, Mongoose, and Appwrite for user data, publishing workflows, media storage, project records, and app state.",
   },
   {
-    year: "2024",
-    date: "Learning Path",
-    company: "Programming Foundations",
-    role: "Java and Python Developer",
+    eyebrow: "Problem Solving",
+    title: "I practice algorithms and fundamentals",
     body:
-      "Gained foundational programming knowledge and strengthened problem-solving through Java, Python, and web development.",
+      "I use JavaScript, C, and C++ foundations with data structures and algorithms practice across LeetCode, Codeforces, and GeeksforGeeks.",
   },
 ];
 
-const pricingPlans = [
-  {
-    name: "Starter",
-    price: "Basic",
-    description: "A clean one-page website for a personal brand or small service.",
-    features: ["Responsive page", "Contact section", "Basic SEO setup", "1 week support"],
-  },
-  {
-    name: "Professional",
-    price: "Custom",
-    description: "A multi-section portfolio, business page, or product-style website.",
-    features: ["Modern UI", "Project sections", "API integration", "Fast delivery"],
-    featured: true,
-  },
-  {
-    name: "Full Stack",
-    price: "Advanced",
-    description: "A complete app with frontend, backend, database, and auth flow.",
-    features: ["React frontend", "Express backend", "MongoDB models", "Bug fixes for 1 week"],
-  },
+const skillStack = [
+  { sign: "JS", name: "JavaScript", group: "Language" },
+  { sign: "C", name: "C", group: "Language" },
+  { sign: "C++", name: "C++", group: "Language" },
+  { sign: "R", name: "React.js", group: "Frontend" },
+  { sign: "RTK", name: "Redux Toolkit", group: "Frontend" },
+  { sign: "RR", name: "React Router", group: "Frontend" },
+  { sign: "H5", name: "HTML5", group: "Frontend" },
+  { sign: "C3", name: "CSS3", group: "Frontend" },
+  { sign: "TW", name: "Tailwind CSS", group: "Frontend" },
+  { sign: "BS", name: "Bootstrap", group: "Frontend" },
+  { sign: "V", name: "Vite", group: "Tooling" },
+  { sign: "N", name: "Node.js", group: "Backend" },
+  { sign: "EX", name: "Express.js", group: "Backend" },
+  { sign: "API", name: "REST APIs", group: "Backend" },
+  { sign: "JWT", name: "JWT Auth", group: "Backend" },
+  { sign: "RBAC", name: "Role Access", group: "Backend" },
+  { sign: "MDB", name: "MongoDB", group: "Database" },
+  { sign: "MG", name: "Mongoose", group: "Database" },
+  { sign: "AW", name: "Appwrite", group: "Database" },
+  { sign: "GIT", name: "Git & GitHub", group: "Tools" },
+  { sign: "NPM", name: "npm", group: "Tools" },
+  { sign: "VS", name: "VS Code", group: "Tools" },
 ];
 
-const navItems = ["about", "experience", "projects", "services", "pricing", "contact"];
+const navItems = ["about", "experience", "projects", "services", "skills", "contact"];
 
 function Header() {
   return (
@@ -146,7 +132,7 @@ function Header() {
           ))}
         </nav>
         <a
-          href="mailto:23je0015@iitism.ac.in"
+          href="mailto:singhabhijeet1212@gmail.com"
           className="rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-500"
         >
           Email Me
@@ -165,12 +151,11 @@ function Hero() {
             Hi, I'm Abhijeet Singh Rajput
           </h1>
           <p className="mt-8 font-display text-4xl font-semibold text-blue-600 sm:text-5xl">
-            Python Dev
+            Full-Stack Developer
           </p>
           <p className="mt-8 max-w-3xl text-lg leading-8 text-zinc-300">
-            I'm a passionate WordPress developer with skills in Oracle APEX,
-            HTML/CSS, and a growing interest in Java and Python. I love building
-            clean, responsive websites and web apps that solve real problems.
+            Full-stack developer with hands-on experience building scalable web
+            applications using React, Node.js, Express, and MongoDB.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a className="blue-button" href="#contact">
@@ -200,20 +185,17 @@ function About() {
         </div>
         <div className="space-y-7 text-lg leading-8 text-zinc-300">
           <p>
-            I'm passionate and self-taught developer with hands-on experience in
-            WordPress and Oracle APEX. I've built websites from scratch and
-            contributed to projects by managing content, replacing visuals, and
-            optimizing design layouts.
+            I'm a full-stack developer with hands-on experience building scalable
+            web applications using React, Node.js, Express, and MongoDB.
           </p>
           <p>
-            I'm always eager to explore new technologies. I've gained foundational
-            knowledge in Java and Python, and enjoy working with HTML/CSS to
-            enhance front-end experiences.
+            I have a strong understanding of REST APIs, JWT authentication, state
+            management, and backend business logic.
           </p>
           <p>
-            Currently, I'm focused on improving my skills, learning best
-            practices, and working with clients to deliver impactful digital
-            solutions.
+            I'm currently pursuing B.Tech in Mechanical Engineering at IIT (ISM)
+            Dhanbad, with relevant coursework in C Programming, Data Structures,
+            and Algorithms.
           </p>
         </div>
       </div>
@@ -225,24 +207,23 @@ function Experience() {
   return (
     <section id="experience" className="section-pad border-b border-white/10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="mb-16 font-display text-5xl text-white">Experience</h2>
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1fr]">
-          <div className="hidden overflow-hidden bg-zinc-200/90 lg:block">
-            <img className="h-full min-h-[760px] w-full object-cover opacity-80" src="/static/S2.png" alt="" />
-          </div>
-          <div className="timeline">
-            {experiences.map((item) => (
-              <article key={`${item.year}-${item.role}`} className="timeline-item">
-                <div className="timeline-year">{item.year}</div>
-                <div className="timeline-card">
-                  <p className="font-display text-2xl font-semibold text-blue-600">{item.date}</p>
-                  <p className="mt-2 text-lg text-zinc-500">{item.company}</p>
-                  <h3 className="mt-12 font-display text-4xl font-semibold text-white">{item.role}</h3>
-                  <p className="mt-4 max-w-xl text-lg leading-8 text-zinc-200">{item.body}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+        <div className="mb-16 max-w-3xl">
+          <p className="section-kicker">What I Build</p>
+          <h2 className="section-title">Not job history, real skills in motion</h2>
+          <p className="mt-6 text-lg leading-8 text-zinc-300">
+            I have not shown this as professional work experience. These are the
+            areas I know and practice through projects, coursework, and problem
+            solving.
+          </p>
+        </div>
+        <div className="build-flow">
+          {buildAreas.map((item, index) => (
+            <article key={item.title} className="build-block reveal-on-scroll" style={{ "--delay": `${index * 90}ms` }}>
+              <span>{item.eyebrow}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -276,13 +257,13 @@ function Projects() {
           <p className="section-kicker">Portfolio</p>
           <h2 className="section-title">Selected project work</h2>
           <p className="mt-8 text-lg leading-8 text-zinc-300">
-            I'm a passionate developer with skills in React, Node.js, Express,
-            MongoDB, HTML/CSS, and a growing interest in Java and Python.
+            Projects from my CV, built with full-stack and backend-focused
+            implementation.
           </p>
         </div>
         <div>
           <div className="mb-8 flex flex-wrap gap-2">
-            {["All", "React Projects", "Backend Projects"].map((filter) => (
+            {["All", "Full Stack", "Backend"].map((filter) => (
               <button key={filter} className="filter-pill">
                 {filter}
               </button>
@@ -294,15 +275,24 @@ function Projects() {
               <p className="text-sm italic text-zinc-300">Featured Project</p>
               <h3 className="mt-4 font-display text-4xl font-bold text-white">{featured.title}</h3>
               <p className="mt-4 max-w-xl text-zinc-300">{featured.description}</p>
+              <div className="tech-tags">
+                {featured.tech?.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
             </div>
           </a>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {projects.slice(1).map((project) => (
               <a key={project._id || project.title} className="project-tile" href={project.github || project.live || "#"} target="_blank" rel="noreferrer">
-                <span>{project.tech?.[0] || "Project"}</span>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
+                <div className="tech-tags">
+                  {project.tech?.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
               </a>
             ))}
           </div>
@@ -338,13 +328,11 @@ function Services() {
     <section id="services" className="section-pad border-b border-white/10">
       <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-[0.75fr_1.25fr] lg:px-8">
         <div>
-          <p className="section-kicker">Services</p>
-          <h2 className="section-title">What I Provide</h2>
+          <p className="section-kicker">Capabilities</p>
+          <h2 className="section-title">What I can build</h2>
           <p className="mt-8 text-lg leading-8 text-zinc-300">
-            I offer professional web development services, creating modern,
-            responsive, and user-friendly websites. I specialize in building
-            customized solutions with secure features, optimized performance,
-            and a clean design.
+            This is not a paid services table. It is a quick view of the kinds
+            of project work I know how to create from my CV and practice.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
@@ -362,28 +350,26 @@ function Services() {
   );
 }
 
-function Pricing() {
+function Skills() {
   return (
-    <section id="pricing" className="section-pad border-b border-white/10">
+    <section id="skills" className="section-pad border-b border-white/10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-14 max-w-2xl">
-          <p className="section-kicker">Pricing</p>
-          <h2 className="section-title">Flexible packages for real projects</h2>
+          <p className="section-kicker">Skills</p>
+          <h2 className="section-title">Tech stack I know</h2>
+          <p className="mt-6 text-lg leading-8 text-zinc-300">
+            These are the languages, frameworks, databases, and tools listed in
+            my CV and used across my projects.
+          </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
-          {pricingPlans.map((plan) => (
-            <article key={plan.name} className={`pricing-card ${plan.featured ? "pricing-card-featured" : ""}`}>
-              <h3>{plan.name}</h3>
-              <p className="price">{plan.price}</p>
-              <p className="description">{plan.description}</p>
-              <ul>
-                {plan.features.map((feature) => (
-                  <li key={feature}>
-                    <span>✓</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+        <div className="skill-grid">
+          {skillStack.map((skill) => (
+            <article key={skill.name} className="skill-chip reveal-on-scroll">
+              <strong>{skill.sign}</strong>
+              <div>
+                <h3>{skill.name}</h3>
+                <p>{skill.group}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -394,7 +380,7 @@ function Pricing() {
 
 function Contact() {
   const whatsappLink = useMemo(
-    () => "https://wa.me/923462373957?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services",
+    () => "tel:+918604480203",
     []
   );
 
@@ -405,22 +391,22 @@ function Contact() {
           <p className="section-kicker">Contact</p>
           <h2 className="section-title">Let's Work Together, Get In Touch!</h2>
           <p className="mt-8 text-lg leading-8 text-zinc-300">
-            Feel free to reach out for any project inquiries, collaborations, or
-            questions. I'll be happy to assist you.
+            Feel free to reach out for project discussions, collaboration, or
+            anything related to my work.
           </p>
           <div className="mt-14 space-y-10">
             <a href={whatsappLink} className="contact-line">
               <span>☎</span>
               <div>
                 <h3>Contact</h3>
-                <p>+923462373957</p>
+                <p>+91 860-448-0203</p>
               </div>
             </a>
-            <a href="mailto:23je0015@iitism.ac.in" className="contact-line">
+            <a href="mailto:singhabhijeet1212@gmail.com" className="contact-line">
               <span>✉</span>
               <div>
                 <h3>Email</h3>
-                <p>23je0015@iitism.ac.in</p>
+                <p>singhabhijeet1212@gmail.com</p>
               </div>
             </a>
           </div>
@@ -433,7 +419,7 @@ function Contact() {
             const data = new FormData(event.currentTarget);
             const subject = encodeURIComponent(`Portfolio message from ${data.get("name")}`);
             const body = encodeURIComponent(`${data.get("message")}\n\nFrom: ${data.get("name")} <${data.get("email")}>`);
-            window.location.href = `mailto:23je0015@iitism.ac.in?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:singhabhijeet1212@gmail.com?subject=${subject}&body=${body}`;
           }}
         >
           <label>
@@ -467,7 +453,7 @@ function Footer() {
           <a href="https://www.linkedin.com/in/abhijeet-rajput-69a783316/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
             IN
           </a>
-          <a href="mailto:23je0015@iitism.ac.in" aria-label="Email">
+          <a href="mailto:singhabhijeet1212@gmail.com" aria-label="Email">
             ✉
           </a>
         </div>
@@ -477,6 +463,23 @@ function Footer() {
 }
 
 export default function App() {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".reveal-on-scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#1b1b1b] text-white">
       <Header />
@@ -485,7 +488,7 @@ export default function App() {
       <Experience />
       <Projects />
       <Services />
-      <Pricing />
+      <Skills />
       <Contact />
       <Footer />
     </main>
