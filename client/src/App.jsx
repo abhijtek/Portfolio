@@ -122,7 +122,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#1b1b1b]/90 backdrop-blur">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-8">
         <a href="#home" className="font-display text-3xl font-semibold tracking-tight text-white">
-          &lt;TC/&gt;
+          &lt;AR/&gt;
         </a>
         <nav className="hidden items-center gap-10 text-sm font-semibold uppercase tracking-wide text-white md:flex">
           {navItems.map((item) => (
@@ -238,10 +238,14 @@ function Projects() {
     API.get("/projects")
       .then((res) => {
         if (mounted && Array.isArray(res.data) && res.data.length) {
+          console.log("Fetched projects from API:", res.data);
           setRemoteProjects(res.data);
         }
       })
-      .catch(() => setRemoteProjects([]));
+      .catch((error) => {
+        console.error("Failed to fetch projects. Using fallback projects:", error);
+        setRemoteProjects([]);
+      });
     return () => {
       mounted = false;
     };

@@ -8,8 +8,10 @@ export default function Projects() {
     API.get("/projects")
       .then((res) => setProjects(res.data))
       .catch((err) => console.error(err));
+      
+      
   }, []);
-
+ console.log("here are you project",projects);
   return (
     <section id="projects" className="bg-gray-50">
       <div className="frame">
