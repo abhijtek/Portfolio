@@ -116,6 +116,7 @@ const skillStack = [
 ];
 
 const navItems = ["about", "experience", "projects", "services", "skills", "contact"];
+const featuredProjectTitle = "blogpost";
 
 function Header() {
   return (
@@ -252,7 +253,12 @@ function Projects() {
   }, []);
 
   const projects = remoteProjects.length ? remoteProjects : fallbackProjects;
-  const featured = projects[0] || fallbackProjects[0];
+  const featured =
+    projects.find((project) => project.title?.toLowerCase().includes(featuredProjectTitle)) ||
+    fallbackProjects.find((project) => project.title?.toLowerCase().includes(featuredProjectTitle)) ||
+    projects[0] ||
+    fallbackProjects[0];
+  const otherProjects = projects.filter((project) => project._id !== featured._id);
 
   return (
     <section id="projects" className="section-pad border-b border-white/10">
@@ -288,7 +294,7 @@ function Projects() {
           </a>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {projects.slice(1).map((project) => (
+            {otherProjects.map((project) => (
               <a key={project._id || project.title} className="project-tile" href={project.github || project.live || "#"} target="_blank" rel="noreferrer">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
@@ -377,6 +383,29 @@ function Skills() {
             </article>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Education() {
+  return (
+    <section id="education" className="section-pad border-b border-white/10">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+        <div>
+          <p className="section-kicker">Education</p>
+          <h2 className="section-title">IIT (ISM) Dhanbad</h2>
+        </div>
+        <article className="education-card reveal-on-scroll">
+          <p className="education-date">Aug 2023 - May 2027</p>
+          <h3>Bachelor of Technology in Mechanical Engineering</h3>
+          <p>Indian Institute of Technology (ISM), Dhanbad</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <span>CGPA: 8.41 / 10.00</span>
+            <span>C Programming</span>
+            <span>Data Structures and Algorithms</span>
+          </div>
+        </article>
       </div>
     </section>
   );
@@ -493,6 +522,7 @@ export default function App() {
       <Projects />
       <Services />
       <Skills />
+      <Education />
       <Contact />
       <Footer />
     </main>

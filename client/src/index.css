@@ -414,6 +414,47 @@ textarea {
   font-size: 0.85rem;
 }
 
+.education-card {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.1rem;
+  background:
+    radial-gradient(circle at top right, rgba(8, 120, 216, 0.22), transparent 34%),
+    #1f1f1f;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.education-date {
+  color: #0878d8;
+  font-family: Orbitron, Eurostile, "Arial Black", Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.education-card h3 {
+  margin-top: 1.5rem;
+  color: white;
+  font-family: Orbitron, Eurostile, "Arial Black", Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.education-card p:not(.education-date) {
+  margin-top: 1rem;
+  color: #d4d4d8;
+  font-size: 1.1rem;
+}
+
+.education-card span {
+  border: 1px solid rgba(8, 120, 216, 0.36);
+  border-radius: 999px;
+  background: rgba(8, 120, 216, 0.1);
+  padding: 0.55rem 0.85rem;
+  color: #cfe9ff;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
 .contact-line {
   display: flex;
   align-items: center;
