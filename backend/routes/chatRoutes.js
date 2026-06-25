@@ -1,13 +1,10 @@
 import express from "express";
-import Project from "../models/Project.js";
 
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    const { messages, mode } = req.body;
-
-    const projects = await Project.find();
+    const { messages } = req.body;
 
 const systemPrompt = {
   role: "system",
